@@ -1,0 +1,149 @@
+@mixin Button {
+    padding: 1em 3em;
+    border: none;
+    outline: none;
+    width: 150px;
+    color: rgb(44, 43, 43);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    &::before {
+        content: "";
+        background: linear-gradient(
+          45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: 20s linear infinite;
+        transition: opacity 0.5s ease-in-out;
+        border-radius: 10px;
+    }
+
+   
+}
+
+
+@keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+
+
+.Grey {
+    @include Button();
+    background: grey
+}
+.Grey:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: grey;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+.Blue {
+    @include Button();
+}
+.Blue:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: blue;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }  
+  
+.Red{
+    @include Button();
+}
+.Red:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  } 
+
+.Green{
+    @include Button();
+}
+.Green:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: green;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+.Yellow{
+    @include Button();
+}
+.Yellow:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: yellow;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+.Start {
+    @include Button();
+}
+.Start:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #232323;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
